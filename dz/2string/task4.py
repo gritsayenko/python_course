@@ -1,21 +1,10 @@
-s = 'Nwisxl scelerisque justo per hac cras purus lectus maecenas litora facilisi potenti'
-s1 = 'x'
-s2 = 'w'
-x = []
-y = []
-for i in range(0, len(s)):
-    if s[i] == s1:
-        x.append(i)
-    elif s[i] == s2:
-    	y.append(i)
-if len(x) == 0:
+s = 'Nwxisl scelerisque justo per hac cras purus lectus maecenas litora facilisi potenti'
+
+if s.find('x') <= 0:
     print('There is no character x in the string')
-elif len(y) == 0:
+elif s.find('w') <= 0:
     print('There is no character w in the string')
+elif s.find('x') < s.find('w'): 
+    print ('The character x in the string occurs before w')
 else:
-    if x[0] < y[0]:
-        print ('The character x in the string occurs before w')
-    else:
-        print('The character w in the string occurs before s')
-
-
+    print('The character w in the string occurs before x')
