@@ -3,7 +3,11 @@ def check_key(d, k):
     res = 0
     d_keys = d.keys()
     if k in d_keys:
-        res = res + 1
+        res = True
+        print (res)
+    else:
+        res = False
+        print(res)
 
 check_key(d, 'msg')
  
