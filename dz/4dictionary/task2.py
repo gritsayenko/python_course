@@ -1,15 +1,11 @@
 d = {1: True, 2: 'abc', 'msg': 'hello'}
 def check_key(d, k):
-    res = 0
     d_keys = d.keys()
     if k in d_keys:
-        res = True
-        print (res)
+        print(True)
     else:
-        res = False
-        print(res)
+        print(False)
 
 check_key(d, 'msg')
- 
 
 
