@@ -7,5 +7,10 @@ def check_key(d, k):
         print(False)
 
 check_key(d, 'msg')
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> af38d09bdd7e13ea2d62bc88c72acd169884f4da
 
 
