@@ -86,8 +86,6 @@ def f1():
     d = defaultdict(list)
     for i in range(0,len(all_lines)):
         all_lines[i] = list(filter(None, all_lines[i]))
-        d[i].append[('group', all_lines[i][0]),('symbol', all_lines[i][1]),('kekd', all_lines[i][2]),('sum', all_lines[i][3]), ('result', all_lines[i][4])]
-        #dict[i]['group','symbol','kekd','sum', 'result' ]= all_lines[i][0], all_lines[i][1], all_lines[i][2],all_lines[i][3], all_lines[i][4]
-        print(d)
+    print(all_lines) # пока только вывела все значения в виде списка
 
 f1()
