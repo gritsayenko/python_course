@@ -1,19 +1,13 @@
 import zipfile
-#import os
+import os
  
 files = zipfile.ZipFile('D:\\Python\\dz\\7Files\\testfile.zip')
 files.extractall('D:\\Python\\dz\\testfile')
 files.close()
 result_f = open('D:\\Python\\dz\\testfile\\testfile.dat')
-#or line in result_f:
-while True:
-    data = result_f.read(1024)
-    print(data)
- 
-    if not data:
-        break
-result_f.close()
-#print(link.read())
+for line in result_f:
+    if os.path.islink(line) is True:
+        print(line.read())
 
 
 
