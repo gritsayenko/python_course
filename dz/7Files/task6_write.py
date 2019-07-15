@@ -2,14 +2,16 @@
 import os
 def message_write(filepath,message):
 	if not os.path.exists(filepath):
-		f = open(filepath, "w")
+		f = open(filepath, "a+")
 		f.write(message)
 	else:
-		f = open(filepath, 'r')
-		file = f.read()
-		f.close()
-		f = open(filepath, 'w')
-		f.write((message +' '+ file))
+		with open(filepath, 'r+', encoding='utf-8') as f:
+			exist_filedata = f.read()
+			f.seek(0)
+			f.write(message + ' ' + exist_filedata)
+
+
 message_write('.\\file_name.py', "Message")
+message_write('.\\file_name.py', "Message2")
 
 

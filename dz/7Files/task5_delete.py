@@ -6,7 +6,7 @@ def del_empty_dirs(path):
 		if os.path.isdir(dir_i):
 			if not os.listdir(dir_i):
 				os.rmdir(dir_i)
-				print('Directories ',dir_i, 'removed')
+				print('Directory(ies) ',dir_i, 'removed')
 
 del_empty_dirs('.\\')
 
