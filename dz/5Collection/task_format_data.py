@@ -2,19 +2,26 @@ import collections
 f = open('.\\test_data.txt', 'r', encoding='utf-8')
 s = ''.join(f.readlines())
 brands=[]
-data={}
-for i in s.split('\n'):
-	l = i.split(';')
-	brands.append(l[0])
-# отформатированный словарь
-	data.update({ l[0]: {l[1]: {
-            'name': l[2],
-            'quantity': l[3],
-            'price': l[4] }
+new_dict={}
+for item in s.split('\n'):
+	new_list = item.split(';')
+	brands.append(new_list[0])
+# formating data to new dictionary
+	new_dict.update({ new_list[0]: {new_list[1]: {
+            'name': new_list[2],
+            'quantity': new_list[3],
+            'price': new_list[4] }
            } } )
-# производитель с наибольшим количеством товара
-counter = collections.Counter(brands)
-print('Brand with max product ', counter.most_common(1))
-print(data)
+# brand with max count of the products
+counter_products = collections.Counter(brands)
+print('Brand with max count of the products ', counter_products.most_common(1))
+print(new_dict)
+
+def filter(x):
+	for item in new_dict.values():
+		if x in item.keys():
+			print(item)
+
+filter('"ZZJ118110"')
 
 f.close()
